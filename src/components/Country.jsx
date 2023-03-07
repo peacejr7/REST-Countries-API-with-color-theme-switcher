@@ -6,7 +6,7 @@ export default function Country() {
   const { name } = useParams();
 
   useEffect(() => {
-    const getSingleCountry = async () => {
+    const getCountry = async () => {
       try {
         const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
         const data = await res.json();
@@ -16,7 +16,7 @@ export default function Country() {
       }
     };
 
-    getSingleCountry();
+    getCountry();
   }, [name]);
 
   useEffect(() => {
